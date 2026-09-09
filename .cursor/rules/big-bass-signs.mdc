@@ -5,7 +5,11 @@ alwaysApply: true
 
 # Big Bass Signs live site
 
-Repo: `BigBassSigns/bigbasssigns-site` on `main`. Cloudflare Worker `muddy-wind-ead0` deploys from main. Domain: bigbasssigns.com.
+Repo: `BigBassSigns/bigbasssigns-site` on `main`. Cloudflare Worker `muddy-wind-ead0` deploys from main.
+Canonical host that actually serves pages today: `https://www.bigbasssigns.com`.
+Apex `https://bigbasssigns.com/*` currently 301s to the www homepage and drops the path — do not assume apex inner URLs work until that Cloudflare rule is fixed.
+
+Chris reviews and directs. Cursor does the work. Do not ask him to copy files, run git commands, or click through Cloudflare.
 
 Edit this static site in place. Do not create a second site or a navy/orange theme.
 
@@ -19,7 +23,7 @@ Edit this static site in place. Do not create a second site or a navy/orange the
 
 - Construction: land use, SWPPP, safety, boards/install, grants, `/Construction-Stages`
 - Business: banners, storefront, directional
-- Vehicles: wraps, stickers, `/boat-letters`, `/specials/truck-logo-packages`
+- Vehicles: lettering, stickers, truck door kits, `/boat-letters`, `/carpet-decals`, `/specials/truck-logo-packages`. Do not push full wraps.
 - About: shop, `/home/equipment`, `/service-area`
 - Contact: `/contact`
 
@@ -27,14 +31,18 @@ Keep old Google Sites URLs for Ads: `/Sign-Details/*`, `/Construction-Stages/*`,
 
 Priority SEO city pages only: Lynnwood, Everett, Redmond, Sammamish, Woodinville. Other cities stay under `/service-area`.
 
-## Photos
+## Photos — Cursor owns this
 
-JPGs/PNGs live in `photos/` with stable names. HTML uses `/photos/...` — never `drive.google.com/thumbnail`. Compress PNGs over ~1.5MB. Source Drive folder + `IMAGE-INDEX.csv` when asked to import photos. Do not invent jobs, clients, or photos.
+JPGs/PNGs live in `photos/` with stable names. HTML uses `/photos/...` — never `drive.google.com/thumbnail`.
+Grok cannot push binary files to GitHub. When photos are missing on the live site, find them on this Mac (Grok artifacts `photos/`, Google Drive Marketing folders, Desktop, Downloads), copy into repo `photos/`, commit, and `git push origin main` without asking Chris.
+Needed now if missing: `stickers-01.jpg` `stickers-02.jpg` `stickers-03.jpg` `carpet-01.jpg` `carpet-02.jpg` `carpet-03.jpg` `yard-01.jpg` `yard-02.jpg` `yard-03.jpg`.
+Do not use `photos/business-01.jpg` as wrap portfolio (Chris’s truck).
+Do not invent jobs, clients, or photos.
 
 ## Content
 
-Use existing copy (regulated signage, print/install/remove, jurisdiction specs). Keyword-aware but short.
+Customer-facing, AdWords-rich, audience-tailored. No prompt language on the site. No house street address. Email `Sales@BigBassSigns.com` first. License `BIGBABS743C4` in the footer only.
 
 ## Deploy
 
-Commit/push to `main` only when asked. Worker deploys from main.
+You commit and push to `main`. Worker deploys from main. Do not wait for Chris to run git.
