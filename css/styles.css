@@ -48,6 +48,11 @@ ul.tight{padding-left:1.15rem}
 img.shot{margin:0 0 18px}
 .prose{max-width:68ch}
 .prose p{margin:0 0 12px}
+.price{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:15px}
+.price th,.price td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.price th{background:#111;color:#fff;font-weight:600}
+.price td:nth-child(n+2){text-align:right;white-space:nowrap}
+.price caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:13px;padding-top:6px}
 form.quote{display:grid;gap:12px;max-width:520px}
 form.quote label{display:grid;gap:4px;font-weight:600;font-size:14px}
 form.quote input,form.quote select,form.quote textarea{font:inherit;padding:8px;border:1px solid var(--line)}
