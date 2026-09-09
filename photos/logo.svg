@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 405" role="img" aria-label="Big Bass Signs">
+  <rect width="720" height="405" fill="#000"/>
+  <rect y="202" width="720" height="203" fill="#fff"/>
+  <text x="48" y="148" fill="#fff" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="118" font-weight="900" letter-spacing="-2">BIG</text>
+  <text x="338" y="148" fill="#fff" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="118" font-weight="900" letter-spacing="-2">BASS</text>
+  <path fill="#F0B429" d="M312 38c-10 2-18 14-18 28 0 9 4 16 10 22-28 18-46 48-46 82 0 10 2 20 6 28 8-22 24-38 46-46 4 8 12 14 22 14 16 0 28-14 28-32 0-22-16-36-32-40 10-8 16-20 16-34 0-24-20-28-32-22zm4 22c6 0 12 6 12 14s-6 14-12 14-12-6-12-14 6-14 12-14z"/>
+  <text x="48" y="352" fill="#4AA4D8" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="132" font-weight="900" letter-spacing="4">SIGNS</text>
+</svg>
