@@ -1,0 +1,40 @@
+---
+description: Live Big Bass Signs site — IA, design, URLs, photos, deploy
+alwaysApply: true
+---
+
+# Big Bass Signs live site
+
+Repo: `BigBassSigns/bigbasssigns-site` on `main`. Cloudflare Worker `muddy-wind-ead0` deploys from main. Domain: bigbasssigns.com.
+
+Edit this static site in place. Do not create a second site or a navy/orange theme.
+
+## Design
+
+- Charcoal header `#1c1c1c`, gold buttons `#c4a046`, white pages, system fonts
+- Match `css/styles.css` (mobile-first)
+- Nav: Menu checkbox + `<details>` dropdowns (Construction / Business / Vehicles / About + Contact + phone)
+
+## IA (customer type)
+
+- Construction: land use, SWPPP, safety, boards/install, grants, `/Construction-Stages`
+- Business: banners, storefront, directional
+- Vehicles: wraps, stickers, `/boat-letters`, `/specials/truck-logo-packages`
+- About: shop, `/home/equipment`, `/service-area`
+- Contact: `/contact`
+
+Keep old Google Sites URLs for Ads: `/Sign-Details/*`, `/Construction-Stages/*`, `/service-area/*`, `/home/equipment`. Do not delete old paths; add a 301 in `_redirects` if a URL moves.
+
+Priority SEO city pages only: Lynnwood, Everett, Redmond, Sammamish, Woodinville. Other cities stay under `/service-area`.
+
+## Photos
+
+JPGs/PNGs live in `photos/` with stable names. HTML uses `/photos/...` — never `drive.google.com/thumbnail`. Compress PNGs over ~1.5MB. Source Drive folder + `IMAGE-INDEX.csv` when asked to import photos. Do not invent jobs, clients, or photos.
+
+## Content
+
+Use existing copy (regulated signage, print/install/remove, jurisdiction specs). Keyword-aware but short.
+
+## Deploy
+
+Commit/push to `main` only when asked. Worker deploys from main.
