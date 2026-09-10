@@ -21,9 +21,9 @@ nav.menu details .sub{display:none;position:absolute;right:0;top:100%;min-width:
 nav.menu details[open] .sub{display:block}
 nav.menu .sub a{display:block;padding:9px 16px}
 nav.menu .sub a:hover,nav.menu a:hover,nav.menu summary:hover{background:#222}
-.hero{position:relative;color:#fff;min-height:78vh;display:flex;align-items:flex-end;padding:56px 0 48px;background:#111 url("/photos/home-hero-land-use.jpg") center 40%/cover no-repeat}
-.hero.inner{min-height:44vh;align-items:flex-end;padding:40px 0 32px}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.48) 55%,rgba(0,0,0,.22) 100%)}
+.hero{position:relative;color:#fff;min-height:0;display:flex;align-items:flex-end;padding:32px 0 26px;background:#111 url("/photos/home-hero-land-use.jpg") center 35%/cover no-repeat}
+.hero.inner{min-height:0;align-items:flex-end;padding:26px 0 20px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,.4) 100%)}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{margin:8px 0 14px;font-size:clamp(1.7rem,4.2vw,2.55rem);line-height:1.12;max-width:18ch}
 .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
@@ -72,8 +72,8 @@ footer li{margin:6px 0}
   nav.menu{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;margin-left:0;padding:0 0 12px}
   #nav-toggle:checked ~ .bar nav.menu{display:flex}
   nav.menu details .sub{position:static;border:0;background:transparent;padding-left:8px;box-shadow:none}
-  .hero{min-height:68vh}
-  .hero.inner{min-height:36vh}
+  .hero{min-height:0;padding:28px 0 22px}
+  .hero.inner{min-height:0;padding:22px 0 18px}
   .brand img{height:46px}
   .shots img,.shot,.card img{height:200px}
 }
