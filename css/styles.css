@@ -49,7 +49,7 @@ h3{font-size:1.08rem}
 ul.tight{padding-left:1.15rem}
 .muted{color:var(--muted)}
 .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 28px}
-.shots img,.shot{height:220px;width:100%;object-fit:cover}
+.shots img,.shot{width:100%;height:auto;object-fit:contain;background:#f3f3f3}
 img.shot{margin:0 0 22px}
 .prose{max-width:68ch}
 .prose p{margin:0 0 14px}
@@ -75,5 +75,5 @@ footer li{margin:6px 0}
   .hero{min-height:0;padding:28px 0 22px}
   .hero.inner{min-height:0;padding:22px 0 18px}
   .brand img{height:46px}
-  .shots img,.shot,.card img{height:200px}
+  .card img{height:200px}
 }
