@@ -43,7 +43,7 @@ h3{font-size:1.08rem}
 .card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
 .card h3{margin:0 16px 8px}
 .card p{margin:0 16px;color:var(--muted)}
-.card img{width:100%;height:180px;object-fit:cover;margin:0 0 14px}
+.card img{width:100%;height:180px;object-fit:cover;object-position:center 30%;margin:0 0 14px}
 .cols{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .strip{display:flex;flex-wrap:wrap;gap:22px;font-weight:700;margin-top:8px}
 ul.tight{padding-left:1.15rem}
@@ -55,6 +55,9 @@ img.shot{margin:0 0 22px}
 .wrap:has(> .shots) > .shots{grid-column:1;grid-row:1 / 30;margin:0}
 .wrap:has(> .shots.right){grid-template-columns:1fr minmax(200px,32%)}
 .wrap:has(> .shots.right) > .shots{grid-column:2}
+.wrap:has(> .shots.wide){grid-template-columns:1fr}
+.wrap:has(> .shots.wide) > .shots{grid-column:1;grid-row:auto;margin:0 0 22px}
+.shots.wide{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .prose{max-width:68ch}
 .prose p{margin:0 0 14px}
 .price{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:15px}
@@ -84,4 +87,6 @@ footer li{margin:6px 0}
   .wrap:has(> .shots.right){grid-template-columns:1fr}
   .wrap:has(> .shots) > .shots,
   .wrap:has(> .shots.right) > .shots{grid-column:1;grid-row:auto;max-width:380px}
+  .shots.wide{grid-template-columns:1fr}
+  .wrap:has(> .shots.wide) > .shots{max-width:none}
 }
