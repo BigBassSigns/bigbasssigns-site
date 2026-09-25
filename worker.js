@@ -84,6 +84,22 @@ export default {
     const path = rawPath.replace(/\/$/, "") || "/";
     const lower = path.toLowerCase();
 
+    if (lower === "/robots.txt" || lower === "/sitemap.xml") {
+      const assetPath = lower === "/robots.txt" ? "/robots.txt" : "/sitemap.xml";
+      const assetRes = await env.ASSETS.fetch(new Request(new URL(assetPath, url.origin), request));
+      const assetType = assetRes.headers.get("content-type") || "";
+      if (assetRes.ok && !assetType.includes("text/html")) {
+        const headers = new Headers(assetRes.headers);
+        headers.set(
+          "content-type",
+          lower === "/robots.txt"
+            ? "text/plain; charset=utf-8"
+            : "application/xml; charset=utf-8"
+        );
+        return new Response(assetRes.body, { status: 200, headers });
+      }
+    }
+
     const dest = redirects[lower];
     if (dest && dest.toLowerCase() !== lower) {
       return Response.redirect(new URL(dest + url.search, url.origin), 301);
