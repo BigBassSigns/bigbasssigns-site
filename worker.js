@@ -43,6 +43,7 @@ const canonicalPaths = [
   "/carpet-decals",
   "/construction",
   "/contact",
+  "/faq",
   "/directional",
   "/equipment",
   "/home/equipment",

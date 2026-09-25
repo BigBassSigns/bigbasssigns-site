@@ -8,7 +8,7 @@ img{max-width:100%;height:auto;display:block}
 header{background:#000;color:#fff;position:sticky;top:0;z-index:40}
 header a{color:#fff;text-decoration:none}
 .bar{display:flex;align-items:center;gap:12px;min-height:76px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;font-weight:700;font-size:15px;white-space:nowrap}
 .brand img{height:54px;width:auto;background:#000}
 .phone{font-weight:700;font-size:15px;white-space:nowrap;color:var(--gold)}
 #nav-toggle{position:absolute;left:-9999px}
