@@ -64,6 +64,9 @@ img.shot{margin:0 0 22px}
 .wrap:has(> .shots.wide){grid-template-columns:1fr}
 .wrap:has(> .shots.wide) > .shots{grid-column:1;grid-row:auto;margin:0 0 22px}
 .shots.wide{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.printer-frame{max-width:960px;margin:0 auto 28px}
+.printer-frame img{width:100%;max-width:960px;margin-inline:auto;display:block;height:min(520px,62vw);object-fit:cover;object-position:center 42%;background:#f3f3f3}
+.printer-frame figcaption{font-size:14px;color:var(--muted);padding:10px 0 0;text-align:center;line-height:1.4}
 .prose{max-width:68ch}
 .prose p{margin:0 0 14px}
 .price{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:15px}
