@@ -1,5 +1,6 @@
 const redirects = {
   "/home": "/",
+  "/home/equipment": "/equipment",
   "/home/team": "/about",
   "/team": "/about",
   "/sign-details/business-services/outdoor-signage": "/business",
@@ -46,7 +47,6 @@ const canonicalPaths = [
   "/faq",
   "/directional",
   "/equipment",
-  "/home/equipment",
   "/home/sponsorships",
   "/land-use",
   "/privacy-policy",
