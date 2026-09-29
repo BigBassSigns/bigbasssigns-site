@@ -36,6 +36,9 @@ nav.menu .sub a:hover,nav.menu a:hover,nav.menu summary:hover{background:#222}
 .hero-carpet{background-image:url("/photos/carpet-01.jpg");background-position:center}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,.4) 100%)}
 .hero.hero-trailer::before{content:none}
+.hero-trailer .hero-panel{background:rgba(20,22,24,0.78);padding:18px 22px;max-width:640px;border-radius:10px}
+.hero-trailer .hero-panel h1{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.hero-trailer .hero-panel p{color:#fff}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{margin:8px 0 14px;font-size:clamp(1.7rem,4.2vw,2.55rem);line-height:1.12;max-width:18ch}
 .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
