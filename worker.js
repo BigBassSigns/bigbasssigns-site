@@ -111,6 +111,18 @@ export default {
       return Response.redirect(new URL(canon + url.search, url.origin), 301);
     }
 
-    return env.ASSETS.fetch(request);
+    const assetRes = await env.ASSETS.fetch(request);
+    if (assetRes.status !== 404) {
+      return assetRes;
+    }
+
+    if (lower.startsWith("/photos/") || lower === "/robots.txt" || lower === "/sitemap.xml") {
+      return assetRes;
+    }
+
+    const page = await env.ASSETS.fetch(new Request(new URL("/404.html", url.origin), request));
+    const headers = new Headers(page.headers);
+    headers.set("content-type", "text/html; charset=utf-8");
+    return new Response(page.body, { status: 404, headers });
   },
 };
