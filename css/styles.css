@@ -22,7 +22,9 @@ nav.menu details[open] .sub{display:block}
 nav.menu .sub a{display:block;padding:9px 16px}
 nav.menu .sub a:hover,nav.menu a:hover,nav.menu summary:hover{background:#222}
 .hero{position:relative;color:#fff;min-height:0;display:flex;align-items:flex-end;padding:32px 0 26px;background:#111 url("/photos/construction-development.jpg") center 40%/cover no-repeat}
+.hero:not(.inner){background-image:url("/photos/landuse-posted-lynnwood-imagine.jpg")}
 .hero.inner{min-height:0;align-items:flex-end;padding:26px 0 20px}
+.hero-landuse{background-image:url("/photos/landuse-posted-lynnwood-imagine.jpg");background-position:center 40%}
 .hero-banners{background-image:url("/photos/banner-01.jpg");background-position:center}
 .hero-doors{background-image:url("/photos/truck-contour-buford.jpg");background-position:center}
 .hero-trailer{
