@@ -33,6 +33,18 @@ const redirects = {
   "/swppp": "/Construction-Stages/environmental-swppp-tree-protection",
   "/land-use-signs": "/Sign-Details/Land-Use-Signs",
   "/service-area/seattle-sdci-signs": "/Sign-Details/Land-Use-Signs",
+  "/contact-us/schedule-consultation": "/contact",
+  "/stickers": "/vehicles",
+  "/stickers/carpet-stickers": "/carpet-decals",
+  "/stickers/equipment": "/equipment",
+  "/stickers/marketing": "/vehicles",
+  "/stickers/hard-hat": "/vehicles",
+  "/signs/yard": "/business/banners",
+  "/outdoor_signs": "/construction",
+  "/sign-details/business-services": "/business",
+  "/who-you-are": "/about",
+  "/big-bass-signs/team": "/about",
+  "/construction-stages/who-you-are": "/about",
 };
 
 const canonicalPaths = [
