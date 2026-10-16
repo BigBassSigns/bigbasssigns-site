@@ -128,7 +128,17 @@ export default {
       return assetRes;
     }
 
-    if (lower.startsWith("/photos/") || lower === "/robots.txt" || lower === "/sitemap.xml") {
+    // Icon files stay asset responses. Do not swap a miss for the HTML 404 page.
+    if (
+      lower.startsWith("/photos/") ||
+      lower === "/robots.txt" ||
+      lower === "/sitemap.xml" ||
+      lower === "/favicon.ico" ||
+      lower === "/favicon.png" ||
+      lower === "/favicon-32.png" ||
+      lower === "/apple-touch-icon.png" ||
+      lower === "/fav_src.png"
+    ) {
       return assetRes;
     }
 
