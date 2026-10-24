@@ -2,3 +2,4 @@
 **/.wrangler
 **/.cursor
 **/.DS_Store
+normalize.py
