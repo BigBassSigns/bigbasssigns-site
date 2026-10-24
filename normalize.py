@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Prepare a PNG or JPG for VersaWorks.
+"""Convert a PNG or JPG to sRGB and print a short color diagnostic.
 
-Converts the image to sRGB, lifts near-black pixels so navy does not crush
-to black, and boosts saturation on red-dominant pixels so reds do not go
-pink. Writes <name>_sRGB.png next to the original. Folders are scanned for
-PNG and JPG files. Files that already end in _sRGB are left alone so the
-lift and red boost are not applied twice.
+Writes <name>_sRGB.png next to the original. Pixel values are not lifted
+or recolored. The diagnostic reports the profile, size, and how many
+pixels are near-black or red-dominant. Folders are scanned for PNG and
+JPG files. Files that already end in _sRGB are left alone.
 
 Requires Pillow.
 
@@ -24,14 +23,9 @@ from PIL import Image, ImageCms, ImageOps
 # Shop prints can be banner-sized. This is a local tool for our own files.
 Image.MAX_IMAGE_PIXELS = None
 
-# Every channel under NAVY_MAX is near-black. 1.275 is +27.5%, inside 25–30%.
-NAVY_MAX = 40
-NAVY_LIFT = 1.275
-
-# Red-dominant means R leads the next channel by at least this many levels.
-# Saturation is scaled; hue and brightness stay put.
+# Reported only. These pixels are not changed.
+NEAR_BLACK = 40
 RED_LEAD = 12
-RED_SATURATION = 1.25
 
 _EXTENSIONS = {".png", ".jpg", ".jpeg"}
 _SRGB = ImageCms.createProfile("sRGB")
@@ -86,15 +80,15 @@ def collect_inputs(items) -> tuple[list[Path], list[str], list[str]]:
     return files, errors, notes
 
 
-def normalize(path: str | Path) -> Path:
+def normalize(path: str | Path) -> tuple[Path, str]:
     src = Path(path)
     if src.suffix.lower() not in _EXTENSIONS:
         raise ValueError(f"{src.name} is not a PNG or JPG")
     if not src.is_file():
         raise FileNotFoundError(f"no such file: {src}")
 
-    rgb, alpha, dpi = _load(src)
-    rgb = _adjust(rgb)
+    rgb, alpha, dpi, note = _load(src)
+    diagnostic = _diagnostic(src.name, rgb, alpha is not None, dpi, note)
     if alpha is not None:
         r, g, b = rgb.split()
         rgb = Image.merge("RGBA", (r, g, b, alpha))
@@ -104,7 +98,7 @@ def normalize(path: str | Path) -> Path:
     if dpi:
         kwargs["dpi"] = dpi
     rgb.save(dest, **kwargs)
-    return dest
+    return dest, diagnostic
 
 
 def _load(src: Path):
@@ -115,14 +109,14 @@ def _load(src: Path):
         icc = oriented.info.get("icc_profile")
         if icc is not None:
             icc = bytes(icc)
-        rgb, alpha = _rgb_and_alpha(oriented, icc, src.name)
+        rgb, alpha, note = _rgb_and_alpha(oriented, icc)
         rgb.load()
         if alpha is not None:
             alpha.load()
-        return rgb.copy(), None if alpha is None else alpha.copy(), dpi
+        return rgb.copy(), None if alpha is None else alpha.copy(), dpi, note
 
 
-def _rgb_and_alpha(im: Image.Image, icc: bytes | None, name: str):
+def _rgb_and_alpha(im: Image.Image, icc: bytes | None):
     if im.mode == "I;16":
         im = _gray16_to_l(im)
 
@@ -133,28 +127,30 @@ def _rgb_and_alpha(im: Image.Image, icc: bytes | None, name: str):
     alpha = None
     if im.mode == "RGBA":
         r, g, b, alpha = im.split()
-        rgb = _to_srgb(Image.merge("RGB", (r, g, b)), icc, name)
+        rgb, note = _to_srgb(Image.merge("RGB", (r, g, b)), icc)
     elif im.mode == "LA":
         gray, alpha = im.split()
-        rgb = _to_srgb(gray, icc, name)
+        rgb, note = _to_srgb(gray, icc)
     elif im.mode in ("RGB", "L", "CMYK"):
-        rgb = _to_srgb(im, icc, name)
+        rgb, note = _to_srgb(im, icc)
     else:
-        rgb = im.convert("RGB")
+        rgb, note = im.convert("RGB"), "converted to RGB"
 
     if rgb.mode != "RGB":
         rgb = rgb.convert("RGB")
-    return rgb, alpha
+    return rgb, alpha, note
 
 
-def _to_srgb(im: Image.Image, icc: bytes | None, name: str) -> Image.Image:
+def _to_srgb(im: Image.Image, icc: bytes | None) -> tuple[Image.Image, str]:
     if im.mode == "CMYK" and not icc:
-        print(
-            f"warning: {name}: CMYK file has no color profile; colors are approximate",
-            file=sys.stderr,
-        )
-    if not icc or _is_srgb(icc):
-        return im if im.mode == "RGB" else im.convert("RGB")
+        rgb = im.convert("RGB")
+        return rgb, "CMYK with no profile; colors are approximate"
+    if not icc:
+        rgb = im if im.mode == "RGB" else im.convert("RGB")
+        return rgb, "no profile, treated as sRGB"
+    if _is_srgb(icc):
+        rgb = im if im.mode == "RGB" else im.convert("RGB")
+        return rgb, "already sRGB"
     try:
         src = ImageCms.ImageCmsProfile(io.BytesIO(icc))
         converted = ImageCms.profileToProfile(
@@ -166,14 +162,12 @@ def _to_srgb(im: Image.Image, icc: bytes | None, name: str) -> Image.Image:
             flags=ImageCms.Flags.BLACKPOINTCOMPENSATION,
         )
     except Exception as exc:
-        print(
-            f"warning: {name}: embedded color profile was skipped ({exc})",
-            file=sys.stderr,
-        )
-        return im if im.mode == "RGB" else im.convert("RGB")
+        rgb = im if im.mode == "RGB" else im.convert("RGB")
+        return rgb, f"profile skipped ({exc})"
     if converted is None or converted.mode != "RGB":
-        return im if im.mode == "RGB" else im.convert("RGB")
-    return converted
+        rgb = im if im.mode == "RGB" else im.convert("RGB")
+        return rgb, "profile skipped"
+    return converted, f"{_profile_name(icc)} converted to sRGB"
 
 
 def _is_srgb(icc: bytes) -> bool:
@@ -195,45 +189,60 @@ def _gray16_to_l(im: Image.Image) -> Image.Image:
     return Image.frombytes("L", im.size, out.tobytes())
 
 
-def _adjust(im: Image.Image) -> Image.Image:
-    """Lift near-black pixels, then protect reds. im is RGB."""
+def _profile_name(icc: bytes) -> str:
+    try:
+        desc = ImageCms.getProfileDescription(ImageCms.ImageCmsProfile(io.BytesIO(icc)))
+    except Exception:
+        return "embedded profile"
+    if isinstance(desc, bytes):
+        text = desc.decode("latin-1", "replace")
+    else:
+        text = str(desc)
+    text = " ".join(text.split())
+    return text or "embedded profile"
 
-    def tweak(r: int, g: int, b: int):
-        if r < NAVY_MAX and g < NAVY_MAX and b < NAVY_MAX:
-            r = _byte(r * NAVY_LIFT)
-            g = _byte(g * NAVY_LIFT)
-            b = _byte(b * NAVY_LIFT)
+
+def _diagnostic(name: str, rgb: Image.Image, has_alpha: bool, dpi, note: str) -> str:
+    width, height = rgb.size
+    mode = "RGBA" if has_alpha else "RGB"
+    raw = rgb.tobytes()
+    total = len(raw) // 3
+    near = red = 0
+    for i in range(0, len(raw), 3):
+        r = raw[i]
+        g = raw[i + 1]
+        b = raw[i + 2]
+        if r < NEAR_BLACK and g < NEAR_BLACK and b < NEAR_BLACK and (r or g or b):
+            near += 1
         second = g if g >= b else b
-        if r - second < RED_LEAD:
-            return r, g, b
-        span_g = r - g
-        span_b = r - b
-        g2 = r - span_g * RED_SATURATION
-        b2 = r - span_b * RED_SATURATION
-        if g2 < 0 or b2 < 0:
-            span = span_g if span_g >= span_b else span_b
-            scale = r / span
-            g2 = r - span_g * scale
-            b2 = r - span_b * scale
-        return r, _byte(g2), _byte(b2)
-
-    src = im.tobytes()
-    out = bytearray(len(src))
-    for i in range(0, len(src), 3):
-        r, g, b = tweak(src[i], src[i + 1], src[i + 2])
-        out[i] = r
-        out[i + 1] = g
-        out[i + 2] = b
-    return Image.frombytes("RGB", im.size, bytes(out))
+        if r - second >= RED_LEAD:
+            red += 1
+    parts = [f"{name}: {width}×{height} {mode}"]
+    if dpi:
+        parts.append(f"{_dpi(dpi)} dpi")
+    parts.append(note)
+    if total:
+        if near:
+            parts.append(f"near-black {near} px ({_pct(near, total)})")
+        if red:
+            parts.append(f"red-dominant {red} px ({_pct(red, total)})")
+        if not near and not red:
+            parts.append("no near-black or red-dominant pixels")
+    return " — ".join(parts)
 
 
-def _byte(value: float) -> int:
-    n = int(value + 0.5)
-    if n < 0:
-        return 0
-    if n > 255:
-        return 255
-    return n
+def _dpi(dpi) -> str:
+    try:
+        x, y = dpi
+    except (TypeError, ValueError):
+        return str(dpi)
+    if abs(x - y) < 0.5:
+        return str(int(round(x)))
+    return f"{x:.0f}×{y:.0f}"
+
+
+def _pct(count: int, total: int) -> str:
+    return f"{count / total * 100:.1f}%"
 
 
 def main(argv: list[str]) -> int:
@@ -255,7 +264,9 @@ def main(argv: list[str]) -> int:
     failed = bool(errors)
     for path in files:
         try:
-            print(normalize(path))
+            dest, diagnostic = normalize(path)
+            print(diagnostic)
+            print(dest)
         except Exception as exc:
             print(f"{path}: {exc}", file=sys.stderr)
             failed = True

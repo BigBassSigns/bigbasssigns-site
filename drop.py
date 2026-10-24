@@ -7,8 +7,6 @@ the app asks for files or a folder. Results are shown in a dialog.
 
 from __future__ import annotations
 
-import contextlib
-import io
 import subprocess
 import sys
 
@@ -74,12 +72,17 @@ return out
     return [line.strip() for line in result.stdout.splitlines() if line.strip()]
 
 
-def report(saved: list, errors: list[str], notes: list[str]) -> str:
+def report(diagnostics: list[str], errors: list[str], notes: list[str]) -> str:
     lines: list[str] = []
-    if len(saved) == 1:
-        lines.append(f"Saved {saved[0].name} next to the original.")
-    elif saved:
-        lines.append(f"Saved {len(saved)} files next to the originals.")
+    if diagnostics:
+        lines.extend(diagnostics[:12])
+        extra = len(diagnostics) - len(lines)
+        if extra > 0:
+            lines.append(f"and {extra} more saved next to the originals")
+        elif len(diagnostics) > 1:
+            lines.append(f"Saved {len(diagnostics)} files next to the originals.")
+        else:
+            lines.append("Saved next to the original.")
     if notes:
         lines.extend(notes[:8])
         if len(notes) > 8:
@@ -112,21 +115,18 @@ def _main(argv: list[str]) -> int:
     noun = "image" if count == 1 else "images"
     notify(f"Converting {count} {noun}…")
 
-    saved = []
+    diagnostics = []
     for path in files:
-        captured = io.StringIO()
         try:
-            with contextlib.redirect_stderr(captured):
-                saved.append(normalize.normalize(path))
+            dest, diagnostic = normalize.normalize(path)
         except Exception as exc:
             errors.append(f"{path.name}: {exc}")
             continue
-        warning = captured.getvalue().strip()
-        if warning:
-            notes.append(f"{path.name}: {warning}")
-        print(saved[-1])
+        diagnostics.append(diagnostic)
+        print(diagnostic)
+        print(dest)
 
-    alert(report(saved, errors, notes))
+    alert(report(diagnostics, errors, notes))
     return 1 if errors else 0
 
 
