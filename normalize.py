@@ -3,13 +3,13 @@
 
 Converts the image to sRGB, lifts near-black pixels so navy does not crush
 to black, and boosts saturation on red-dominant pixels so reds do not go
-pink. Writes <name>_sRGB.png next to the original. Run it on the original
-again to redo the file; do not run it on the _sRGB output or the lift and
-red boost stack a second time.
+pink. Writes <name>_sRGB.png next to the original. Folders are scanned for
+PNG and JPG files. Files that already end in _sRGB are left alone so the
+lift and red boost are not applied twice.
 
 Requires Pillow.
 
-    python normalize.py art.png photo.jpg
+    python normalize.py art.png photo.jpg folder/
 """
 
 from __future__ import annotations
@@ -36,6 +36,54 @@ RED_SATURATION = 1.25
 _EXTENSIONS = {".png", ".jpg", ".jpeg"}
 _SRGB = ImageCms.createProfile("sRGB")
 _SRGB_BYTES = ImageCms.ImageCmsProfile(_SRGB).tobytes()
+
+
+def collect_inputs(items) -> tuple[list[Path], list[str], list[str]]:
+    """Return PNG/JPG files, error messages, and skip notes.
+
+    A folder contributes the images inside it, including nested folders.
+    Hidden files are ignored. An explicit file that is not a PNG or JPG is
+    an error. Outputs from an earlier run are skipped.
+    """
+    files: list[Path] = []
+    errors: list[str] = []
+    notes: list[str] = []
+    seen: set[str] = set()
+
+    def add(path: Path) -> None:
+        key = str(path)
+        if key not in seen:
+            seen.add(key)
+            files.append(path)
+
+    for raw in items:
+        path = Path(raw).expanduser()
+        if not path.exists():
+            errors.append(f"no such file: {path}")
+            continue
+        if path.is_dir():
+            for found in path.rglob("*"):
+                if not found.is_file():
+                    continue
+                relative = found.relative_to(path)
+                if any(part.startswith(".") for part in relative.parts):
+                    continue
+                if found.suffix.lower() not in _EXTENSIONS:
+                    continue
+                if found.stem.endswith("_sRGB"):
+                    continue
+                add(found)
+            continue
+        if path.suffix.lower() not in _EXTENSIONS:
+            errors.append(f"{path.name} is not a PNG or JPG")
+            continue
+        if path.stem.endswith("_sRGB"):
+            notes.append(f"skipped {path.name} (already normalized)")
+            continue
+        add(path)
+
+    files.sort(key=lambda item: str(item).lower())
+    return files, errors, notes
 
 
 def normalize(path: str | Path) -> Path:
@@ -190,14 +238,26 @@ def _byte(value: float) -> int:
 
 def main(argv: list[str]) -> int:
     if len(argv) < 2:
-        print(f"Usage: python {Path(__file__).name} file.png [more.jpg ...]", file=sys.stderr)
+        print(
+            f"Usage: python {Path(__file__).name} file.png [more.jpg folder ...]",
+            file=sys.stderr,
+        )
         return 1
-    failed = False
-    for name in argv[1:]:
+    files, errors, notes = collect_inputs(argv[1:])
+    for note in notes:
+        print(note, file=sys.stderr)
+    for error in errors:
+        print(error, file=sys.stderr)
+    if not files:
+        if not errors and not notes:
+            print("No PNG or JPG files found.", file=sys.stderr)
+        return 1 if errors or not notes else 0
+    failed = bool(errors)
+    for path in files:
         try:
-            print(normalize(name))
+            print(normalize(path))
         except Exception as exc:
-            print(f"{name}: {exc}", file=sys.stderr)
+            print(f"{path}: {exc}", file=sys.stderr)
             failed = True
     return 1 if failed else 0
 
