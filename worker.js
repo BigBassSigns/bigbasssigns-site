@@ -56,6 +56,7 @@ const canonicalPaths = [
   "/business/yard-signs",
   "/business/floor-and-wall",
   "/business/storefront",
+  "/business/a-frame-signs",
   "/carpet-decals",
   "/construction",
   "/contact",
@@ -143,6 +144,7 @@ export default {
     // Icon files stay asset responses. Do not swap a miss for the HTML 404 page.
     if (
       lower.startsWith("/photos/") ||
+      lower.startsWith("/images/") ||
       lower === "/robots.txt" ||
       lower === "/sitemap.xml" ||
       lower === "/favicon.ico" ||

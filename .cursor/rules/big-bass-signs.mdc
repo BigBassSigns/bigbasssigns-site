@@ -22,7 +22,7 @@ Edit this static site in place. Do not create a second site or a navy/orange the
 ## IA (customer type)
 
 - Construction: land use, SWPPP, safety, boards/install, grants, `/Construction-Stages`
-- Business: banners, storefront, directional
+- Business: banners, storefront, directional, A-frame and sandwich boards (`/business/a-frame-signs`)
 - Vehicles: lettering, stickers, truck door kits, `/boat-letters`, `/carpet-decals`, `/specials/truck-logo-packages`. Never advertise wraps.
 - About: shop, `/home/equipment`, `/service-area`
 - Contact: `/contact`
