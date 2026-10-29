@@ -1,0 +1,35 @@
+keyword,service,audience,localizable,target_path,notes
+land use signs,construction,developers and planners,yes,/Sign-Details/Land-Use-Signs,
+public notice boards,construction,developers and planners,yes,/Sign-Details/Land-Use-Signs,
+public notice signs,construction,developers and planners,yes,/Sign-Details/Land-Use-Signs,
+King County land use notice board,construction,developers and planners,no,/Sign-Details/king-county-notice-board,
+Snohomish County public notice signs,construction,developers and planners,no,/Sign-Details/snohomish-public-notice,
+SWPPP signs,construction,site superintendents,yes,/Construction-Stages/environmental-swppp-tree-protection,
+tree protection signs,construction,site superintendents,yes,/Construction-Stages/environmental-swppp-tree-protection,
+construction signs,construction,general contractors,yes,/Sign-Details/Construction-Signs,
+construction site signs,construction,general contractors,yes,/Sign-Details/Construction-Signs,
+4x8 construction signs,construction,general contractors,yes,/Sign-Details/Construction-Signs,
+project boards,construction,general contractors,yes,/Sign-Details/Construction-Signs,
+jobsite signs,construction,general contractors,yes,/construction,
+OSHA construction signs,construction,safety,yes,/Sign-Details/Construction-Safety-Signs,
+jobsite safety signs,construction,safety,yes,/Sign-Details/Construction-Safety-Signs,
+grant funded project signs,construction,agencies,yes,/Sign-Details/Grant-Agency-Funded,
+agency signs,construction,agencies,yes,/Sign-Details/Grant-Agency-Funded,
+construction signage from entitlement to occupancy,construction,developers,no,/Construction-Stages,
+mesh banners,business,retail and events,yes,/business/banners,
+scrim banners,business,retail and events,yes,/business/banners,
+yard signs,business,retail and events,yes,/business/yard-signs,
+coroplast yard signs,business,retail and events,yes,/business/yard-signs,
+storefront vinyl,business,retail,yes,/business/storefront,
+window lettering,business,retail,yes,/business/storefront,
+floor decals,business,retail,yes,/business/floor-and-wall,
+wall vinyl,business,retail,yes,/business/floor-and-wall,
+directional signs,business,jobsites and storefronts,yes,/Construction-Stages/directional-signage,
+a-frame signs,business,jobsites and storefronts,yes,/Construction-Stages/directional-signage,
+vehicle lettering,vehicles,fleets,yes,/vehicles,Lettering and decals. Never advertise wraps.
+truck decals,vehicles,fleets,yes,/vehicles,Never advertise wraps.
+stickers,vehicles,fleets and boats,yes,/vehicles,Never advertise wraps.
+truck door logo kits,vehicles,fleets,yes,/specials/truck-logo-packages,Door kits only. Never advertise wraps.
+truck door logos,vehicles,fleets,yes,/specials/truck-logo-packages,Never advertise wraps.
+domed boat letters,vehicles,boat owners,yes,/boat-letters,
+boat carpet decals,vehicles,boat owners,yes,/carpet-decals,

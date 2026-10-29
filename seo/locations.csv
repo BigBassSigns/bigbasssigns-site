@@ -1,0 +1,82 @@
+name,county,type,population,distance_from_lynnwood_miles,status,url
+Snohomish County,Snohomish,county,879700,10.7,built,/service-area/Snohomish-County
+Arlington,Snohomish,city,23390,24.7,unbuilt,/service-area/Arlington
+Brier,Snohomish,city,6630,2.8,built,/service-area/Brier
+Darrington,Snohomish,town,1520,43.7,unbuilt,/service-area/Darrington
+Edmonds,Snohomish,city,43770,2.7,built,/service-area/Edmonds
+Everett,Snohomish,city,114900,10.7,built,/service-area/Everett
+Gold Bar,Snohomish,city,2420,28.3,unbuilt,/service-area/Gold-Bar
+Granite Falls,Snohomish,city,4765,23.7,unbuilt,/service-area/Granite-Falls
+Index,Snohomish,town,170,34.6,unbuilt,/service-area/Index
+Lake Stevens,Snohomish,city,42590,15.3,unbuilt,/service-area/Lake-Stevens
+Lynnwood,Snohomish,city,43070,0.0,built,/service-area/Lynnwood
+Marysville,Snohomish,city,76820,18.6,unbuilt,/service-area/Marysville
+Mill Creek,Snohomish,city,21630,4.9,built,/service-area/Mill-Creek
+Monroe,Snohomish,city,20930,14.8,built,/service-area/monroe-site-development
+Mountlake Terrace,Snohomish,city,24750,2.4,built,/service-area/Mountlake-Terrace
+Mukilteo,Snohomish,city,21610,5.8,unbuilt,/service-area/Mukilteo
+Snohomish,Snohomish,city,10770,11.9,unbuilt,/service-area/Snohomish
+Stanwood,Snohomish,city,9325,28.8,unbuilt,/service-area/Stanwood
+Sultan,Snohomish,city,7480,23.2,unbuilt,/service-area/Sultan
+Woodway,Snohomish,city,1340,4.9,built,/service-area/Woodway
+King County,King,county,2424700,14.7,built,/service-area/King-County
+Algona,King,city,3335,37.9,unbuilt,/service-area/Algona
+Auburn,King,city,90350,36.5,unbuilt,/service-area/Auburn
+Beaux Arts Village,King,town,310,17.4,unbuilt,/service-area/Beaux-Arts-Village
+Bellevue,King,city,158300,17.3,unbuilt,/service-area/Bellevue
+Black Diamond,King,city,7550,37.9,unbuilt,/service-area/Black-Diamond
+Bothell,King/Snohomish,city,52010,5.9,built,/service-area/Bothell-Construction-Signage
+Burien,King,city,53470,24.5,unbuilt,/service-area/Burien
+Carnation,King,city,2415,22.6,unbuilt,/service-area/Carnation
+Clyde Hill,King,city,3100,14.3,unbuilt,/service-area/Clyde-Hill
+Covington,King,city,22200,33.3,unbuilt,/service-area/Covington
+Des Moines,King,city,33690,30.4,unbuilt,/service-area/Des-Moines
+Duvall,King,city,8910,16.6,unbuilt,/service-area/Duvall
+Enumclaw,King,city,13440,45.7,unbuilt,/service-area/Enumclaw
+Federal Way,King,city,103000,35.8,unbuilt,/service-area/Federal-Way
+Hunts Point,King,town,455,13.3,unbuilt,/service-area/Hunts-Point
+Issaquah,King,city,41590,22.9,unbuilt,/service-area/Issaquah
+Kenmore,King,city,24600,6.0,unbuilt,/service-area/Kenmore
+Kent,King,city,140400,30.7,unbuilt,/service-area/Kent
+Kirkland,King,city,98860,10.2,built,/service-area/Kirkland
+Lake Forest Park,King,city,13700,4.9,built,/service-area/Lake-Forest-Park
+Maple Valley,King,city,29340,34.2,unbuilt,/service-area/Maple-Valley
+Medina,King,city,2915,14.2,unbuilt,/service-area/Medina
+Mercer Island,King,city,25870,18.6,unbuilt,/service-area/Mercer-Island
+Milton,King,city,8965,39.9,unbuilt,/service-area/Milton
+Newcastle,King,city,13940,21.5,unbuilt,/service-area/Newcastle
+Normandy Park,King,city,6860,27.4,unbuilt,/service-area/Normandy-Park
+North Bend,King,city,8700,34.2,unbuilt,/service-area/North-Bend
+Pacific,King,city,7285,39.2,unbuilt,/service-area/Pacific
+Redmond,King,city,83320,13.5,built,/service-area/redmond-signage-services
+Renton,King,city,109800,24.7,unbuilt,/service-area/Renton
+Sammamish,King,city,68500,20.3,built,/service-area/Sammamish
+SeaTac,King,city,33210,26.6,unbuilt,/service-area/SeaTac
+Seattle,King,city,823400,14.7,unbuilt,/service-area/Seattle
+Shoreline,King,city,64710,5.4,built,/service-area/Shoreline
+Skykomish,King,town,165,44.6,unbuilt,/service-area/Skykomish
+Snoqualmie,King,city,14550,28.2,unbuilt,/service-area/Snoqualmie
+Tukwila,King,city,23290,24.4,unbuilt,/service-area/Tukwila
+Woodinville,King,city,14350,8.7,built,/service-area/Woodinville
+Yarrow Point,King,town,1130,13.3,unbuilt,/service-area/Yarrow-Point
+Island County,Island,county,89000,32.1,unbuilt,/service-area/Island-County
+Coupeville,Island,town,2035,32.1,unbuilt,/service-area/Coupeville
+Langley,Island,city,1205,15.2,unbuilt,/service-area/Langley
+Oak Harbor,Island,city,24930,35.5,unbuilt,/service-area/Oak-Harbor
+Skagit County,Skagit,county,135350,40.6,unbuilt,/service-area/Skagit-County
+Anacortes,Skagit,city,18410,48.0,unbuilt,/service-area/Anacortes
+Burlington,Skagit,city,11200,44.1,unbuilt,/service-area/Burlington
+Concrete,Skagit,town,815,54.7,unbuilt,/service-area/Concrete
+Hamilton,Skagit,town,290,49.9,unbuilt,/service-area/Hamilton
+La Conner,Skagit,town,1000,40.0,unbuilt,/service-area/La-Conner
+Lyman,Skagit,town,445,49.2,unbuilt,/service-area/Lyman
+Mount Vernon,Skagit,city,36090,40.6,unbuilt,/service-area/Mount-Vernon
+Sedro-Woolley,Skagit,city,13520,47.3,unbuilt,/service-area/Sedro-Woolley
+Whatcom County,Whatcom,county,242250,64.3,unbuilt,/service-area/Whatcom-County
+Bellingham,Whatcom,city,99030,64.3,unbuilt,/service-area/Bellingham
+Blaine,Whatcom,city,6775,82.6,unbuilt,/service-area/Blaine
+Everson,Whatcom,city,3320,74.9,unbuilt,/service-area/Everson
+Ferndale,Whatcom,city,17240,72.0,unbuilt,/service-area/Ferndale
+Lynden,Whatcom,city,17220,77.8,unbuilt,/service-area/Lynden
+Nooksack,Whatcom,city,1895,75.9,unbuilt,/service-area/Nooksack
+Sumas,Whatcom,city,1835,80.6,unbuilt,/service-area/Sumas

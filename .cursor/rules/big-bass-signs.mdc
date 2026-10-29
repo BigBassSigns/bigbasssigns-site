@@ -23,26 +23,27 @@ Edit this static site in place. Do not create a second site or a navy/orange the
 
 - Construction: land use, SWPPP, safety, boards/install, grants, `/Construction-Stages`
 - Business: banners, storefront, directional
-- Vehicles: lettering, stickers, truck door kits, `/boat-letters`, `/carpet-decals`, `/specials/truck-logo-packages`. Do not push full wraps.
+- Vehicles: lettering, stickers, truck door kits, `/boat-letters`, `/carpet-decals`, `/specials/truck-logo-packages`. Never advertise wraps.
 - About: shop, `/home/equipment`, `/service-area`
 - Contact: `/contact`
 
 Keep old Google Sites URLs for Ads: `/Sign-Details/*`, `/Construction-Stages/*`, `/service-area/*`, `/home/equipment`. Do not delete old paths; add a 301 in `_redirects` if a URL moves.
 
-Priority SEO city pages only: Lynnwood, Everett, Redmond, Sammamish, Woodinville. Other cities stay under `/service-area`.
+City, town, and county pages are tracked in `seo/locations.csv` and built from `seo/page-template.md` under `/service-area`. There is no priority-city cap.
 
 ## Photos — Cursor owns this
 
 JPGs/PNGs live in `photos/` with stable names. HTML uses `/photos/...` — never `drive.google.com/thumbnail`.
-Grok cannot push binary files to GitHub. When photos are missing on the live site, find them on this Mac (Grok artifacts `photos/`, Google Drive Marketing folders, Desktop, Downloads), copy into repo `photos/`, commit, and `git push origin main` without asking Chris.
+Grok cannot push binary files to GitHub. When photos are missing on the live site, find them on this Mac (Grok artifacts `photos/`, Google Drive Marketing folders, Desktop, Downloads), copy into repo `photos/`, commit on a branch, and open a pull request. Never push to `main`.
 Needed now if missing: `stickers-01.jpg` `stickers-02.jpg` `stickers-03.jpg` `carpet-01.jpg` `carpet-02.jpg` `carpet-03.jpg` `yard-01.jpg` `yard-02.jpg` `yard-03.jpg`.
 Do not use `photos/business-01.jpg` as wrap portfolio (Chris’s truck).
-Do not invent jobs, clients, or photos.
 
 ## Content
 
 Customer-facing, AdWords-rich, audience-tailored. No prompt language on the site. No house street address. Email `Sales@BigBassSigns.com` first. License `BIGBABS743C4` in the footer only.
 
+Never invent jobs, clients, reviews, or photos. Never advertise wraps.
+
 ## Deploy
 
-You commit and push to `main`. Worker deploys from main. Do not wait for Chris to run git.
+Work on a branch and open a pull request. Never push to `main` and never merge. The Worker deploys from `main` only after a pull request is merged. Do not wait for Chris to run git.

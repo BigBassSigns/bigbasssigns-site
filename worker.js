@@ -88,6 +88,14 @@ const canonicalPaths = [
   "/service-area/Bothell-Construction-Signage",
   "/service-area/monroe-site-development",
   "/service-area/redmond-signage-services",
+  "/service-area/Snohomish-County",
+  "/service-area/King-County",
+  "/service-area/Mountlake-Terrace",
+  "/service-area/Edmonds",
+  "/service-area/Brier",
+  "/service-area/Lake-Forest-Park",
+  "/service-area/Woodway",
+  "/service-area/Shoreline",
 ];
 
 const canonicalByLower = Object.fromEntries(
