@@ -25,6 +25,8 @@ nav.menu .sub a:hover,nav.menu a:hover,nav.menu summary:hover{background:#222}
 .hero:not(.inner){background-image:none}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 40%;z-index:0;pointer-events:none}
 .hero.inner{min-height:0;align-items:flex-end;padding:26px 0 20px}
+.hero.inner.hero-aframe{min-height:480px}
+.hero.inner.hero-aframe .hero-img{object-position:center 24%}
 .hero-landuse{background-image:url("/photos/landuse-posted-lynnwood-imagine.jpg");background-position:center 40%}
 .hero-construction{
   width:100vw;
@@ -86,6 +88,9 @@ img.shot{margin:0 0 22px}
 .wrap:has(> .shots.wide){grid-template-columns:1fr}
 .wrap:has(> .shots.wide) > .shots{grid-column:1;grid-row:auto;margin:0 0 22px}
 .shots.wide{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.shots.wide.aframe-gallery{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.shots.wide.aframe-gallery figure{display:flex;flex-direction:column}
+.shots.wide.aframe-gallery figure img{width:100%;aspect-ratio:3/4;object-fit:contain}
 .printer-frame{max-width:960px;margin:0 auto 28px}
 .printer-frame img{width:100%;max-width:960px;margin-inline:auto;display:block;height:min(520px,62vw);object-fit:cover;object-position:center 42%;background:#f3f3f3}
 .printer-frame figcaption{font-size:14px;color:var(--muted);padding:10px 0 0;text-align:center;line-height:1.4}
@@ -118,6 +123,7 @@ footer li{margin:6px 0}
   nav.menu details .sub{position:static;border:0;background:transparent;padding-left:8px;box-shadow:none}
   .hero{min-height:0;padding:28px 0 22px}
   .hero.inner{min-height:0;padding:22px 0 18px}
+  .hero.inner.hero-aframe{min-height:260px}
   .hero-construction{min-height:220px}
   .brand img{height:46px}
   .card img{height:200px}
@@ -125,7 +131,7 @@ footer li{margin:6px 0}
   .wrap:has(> .shots.right){grid-template-columns:1fr}
   .wrap:has(> .shots) > .shots,
   .wrap:has(> .shots.right) > .shots{grid-column:1;grid-row:auto;max-width:380px}
-  .shots.wide{grid-template-columns:1fr}
+  .shots.wide,.shots.wide.aframe-gallery{grid-template-columns:1fr}
   .wrap:has(> .shots.wide) > .shots{max-width:none}
   .kit-row{grid-template-columns:1fr}
 }

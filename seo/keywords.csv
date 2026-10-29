@@ -25,7 +25,8 @@ window lettering,business,retail,yes,/business/storefront,
 floor decals,business,retail,yes,/business/floor-and-wall,
 wall vinyl,business,retail,yes,/business/floor-and-wall,
 directional signs,business,jobsites and storefronts,yes,/Construction-Stages/directional-signage,
-a-frame signs,business,jobsites and storefronts,yes,/Construction-Stages/directional-signage,
+a-frame signs,business,cafes restaurants food trucks farm stands retail events,yes,/business/a-frame-signs,New frames and panel makeovers. Never advertise wraps.
+sandwich board signs,business,cafes restaurants food trucks farm stands retail events,yes,/business/a-frame-signs,Same page as A-frame signs. Never advertise wraps.
 vehicle lettering,vehicles,fleets,yes,/vehicles,Lettering and decals. Never advertise wraps.
 truck decals,vehicles,fleets,yes,/vehicles,Never advertise wraps.
 stickers,vehicles,fleets and boats,yes,/vehicles,Never advertise wraps.
