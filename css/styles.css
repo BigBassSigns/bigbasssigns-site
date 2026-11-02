@@ -27,7 +27,8 @@ nav.menu .sub a:hover,nav.menu a:hover,nav.menu summary:hover{background:#222}
 .hero.inner{min-height:0;align-items:flex-end;padding:26px 0 20px}
 .hero.inner.hero-aframe{min-height:480px}
 .hero.inner.hero-aframe .hero-img{object-position:center 24%}
-.hero-landuse{background-image:url("/photos/landuse-posted-lynnwood-imagine.jpg");background-position:center 40%}
+.hero-landuse{background-image:none}
+.hero-landuse > img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 40%;z-index:0;pointer-events:none}
 .hero-construction{
   width:100vw;
   margin-left:calc(50% - 50vw);
