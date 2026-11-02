@@ -14,8 +14,8 @@ Marysville,Snohomish,city,76820,18.6,unbuilt,/service-area/Marysville
 Mill Creek,Snohomish,city,21630,4.9,built,/service-area/Mill-Creek
 Monroe,Snohomish,city,20930,14.8,built,/service-area/monroe-site-development
 Mountlake Terrace,Snohomish,city,24750,2.4,built,/service-area/Mountlake-Terrace
-Mukilteo,Snohomish,city,21610,5.8,unbuilt,/service-area/Mukilteo
-Snohomish,Snohomish,city,10770,11.9,unbuilt,/service-area/Snohomish
+Mukilteo,Snohomish,city,21610,5.8,built,/service-area/Mukilteo
+Snohomish,Snohomish,city,10770,11.9,built,/service-area/Snohomish
 Stanwood,Snohomish,city,9325,28.8,unbuilt,/service-area/Stanwood
 Sultan,Snohomish,city,7480,23.2,unbuilt,/service-area/Sultan
 Woodway,Snohomish,city,1340,4.9,built,/service-area/Woodway
@@ -28,20 +28,20 @@ Black Diamond,King,city,7550,37.9,unbuilt,/service-area/Black-Diamond
 Bothell,King/Snohomish,city,52010,5.9,built,/service-area/Bothell-Construction-Signage
 Burien,King,city,53470,24.5,unbuilt,/service-area/Burien
 Carnation,King,city,2415,22.6,unbuilt,/service-area/Carnation
-Clyde Hill,King,city,3100,14.3,unbuilt,/service-area/Clyde-Hill
+Clyde Hill,King,city,3100,14.3,built,/service-area/Clyde-Hill
 Covington,King,city,22200,33.3,unbuilt,/service-area/Covington
 Des Moines,King,city,33690,30.4,unbuilt,/service-area/Des-Moines
 Duvall,King,city,8910,16.6,unbuilt,/service-area/Duvall
 Enumclaw,King,city,13440,45.7,unbuilt,/service-area/Enumclaw
 Federal Way,King,city,103000,35.8,unbuilt,/service-area/Federal-Way
-Hunts Point,King,town,455,13.3,unbuilt,/service-area/Hunts-Point
+Hunts Point,King,town,455,13.3,built,/service-area/Hunts-Point
 Issaquah,King,city,41590,22.9,unbuilt,/service-area/Issaquah
-Kenmore,King,city,24600,6.0,unbuilt,/service-area/Kenmore
+Kenmore,King,city,24600,6.0,built,/service-area/Kenmore
 Kent,King,city,140400,30.7,unbuilt,/service-area/Kent
 Kirkland,King,city,98860,10.2,built,/service-area/Kirkland
 Lake Forest Park,King,city,13700,4.9,built,/service-area/Lake-Forest-Park
 Maple Valley,King,city,29340,34.2,unbuilt,/service-area/Maple-Valley
-Medina,King,city,2915,14.2,unbuilt,/service-area/Medina
+Medina,King,city,2915,14.2,built,/service-area/Medina
 Mercer Island,King,city,25870,18.6,unbuilt,/service-area/Mercer-Island
 Milton,King,city,8965,39.9,unbuilt,/service-area/Milton
 Newcastle,King,city,13940,21.5,unbuilt,/service-area/Newcastle
@@ -52,13 +52,13 @@ Redmond,King,city,83320,13.5,built,/service-area/redmond-signage-services
 Renton,King,city,109800,24.7,unbuilt,/service-area/Renton
 Sammamish,King,city,68500,20.3,built,/service-area/Sammamish
 SeaTac,King,city,33210,26.6,unbuilt,/service-area/SeaTac
-Seattle,King,city,823400,14.7,unbuilt,/service-area/Seattle
+Seattle,King,city,823400,14.7,built,/service-area/Seattle
 Shoreline,King,city,64710,5.4,built,/service-area/Shoreline
 Skykomish,King,town,165,44.6,unbuilt,/service-area/Skykomish
 Snoqualmie,King,city,14550,28.2,unbuilt,/service-area/Snoqualmie
 Tukwila,King,city,23290,24.4,unbuilt,/service-area/Tukwila
 Woodinville,King,city,14350,8.7,built,/service-area/Woodinville
-Yarrow Point,King,town,1130,13.3,unbuilt,/service-area/Yarrow-Point
+Yarrow Point,King,town,1130,13.3,built,/service-area/Yarrow-Point
 Island County,Island,county,89000,32.1,unbuilt,/service-area/Island-County
 Coupeville,Island,town,2035,32.1,unbuilt,/service-area/Coupeville
 Langley,Island,city,1205,15.2,unbuilt,/service-area/Langley

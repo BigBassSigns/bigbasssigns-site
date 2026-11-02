@@ -97,6 +97,14 @@ const canonicalPaths = [
   "/service-area/Lake-Forest-Park",
   "/service-area/Woodway",
   "/service-area/Shoreline",
+  "/service-area/Mukilteo",
+  "/service-area/Kenmore",
+  "/service-area/Snohomish",
+  "/service-area/Yarrow-Point",
+  "/service-area/Hunts-Point",
+  "/service-area/Medina",
+  "/service-area/Clyde-Hill",
+  "/service-area/Seattle",
 ];
 
 const canonicalByLower = Object.fromEntries(
