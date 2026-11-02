@@ -4,6 +4,16 @@ html{scroll-behavior:smooth}
 body{margin:0;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
 a{color:#1a5f86}
 img{max-width:100%;height:auto;display:block}
+main img:not(.hero-img){
+  max-height:320px;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+  margin:0 auto 16px;
+}
+@media(max-width:900px){
+  main img:not(.hero-img){max-height:240px}
+}
 .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
 header{background:#000;color:#fff;position:sticky;top:0;z-index:40}
 header a{color:#fff;text-decoration:none}
@@ -72,7 +82,7 @@ h3{font-size:1.08rem}
 .card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
 .card h3{margin:0 16px 8px}
 .card p{margin:0 16px;color:var(--muted)}
-.card img{width:100%;height:180px;object-fit:cover;object-position:center 30%;margin:0 0 14px}
+main .card img{width:100%;height:180px;object-fit:cover;object-position:center 30%;margin:0 0 14px}
 .cols{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .strip{display:flex;flex-wrap:wrap;gap:22px;font-weight:700;margin-top:8px}
 ul.tight{padding-left:1.15rem}
@@ -100,7 +110,7 @@ img.shot{margin:0 0 22px}
 .job-run li{margin:6px 0}
 .job-links{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:700}
 .kit-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:stretch;margin:0 0 22px}
-.kit-row img{width:100%;height:200px;object-fit:contain;display:block;background:#f3f3f3}
+main .kit-row img{width:100%;height:200px;object-fit:contain;display:block;background:#f3f3f3}
 .prose{max-width:68ch}
 .prose p{margin:0 0 14px}
 .price{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:15px}
@@ -127,7 +137,7 @@ footer li{margin:6px 0}
   .hero.inner.hero-aframe{min-height:260px}
   .hero-construction{min-height:220px}
   .brand img{height:46px}
-  .card img{height:200px}
+  main .card img{height:200px}
   .wrap:has(> .shots),
   .wrap:has(> .shots.right){grid-template-columns:1fr}
   .wrap:has(> .shots) > .shots,
