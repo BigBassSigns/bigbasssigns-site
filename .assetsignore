@@ -2,3 +2,8 @@
 **/.wrangler
 **/.cursor
 **/.DS_Store
+normalize.py
+drop.py
+build_mac_app.py
+sRGB Normalize.app
+sRGB-Normalize.zip

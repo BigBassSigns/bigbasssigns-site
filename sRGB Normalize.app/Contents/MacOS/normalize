@@ -1,0 +1,35 @@
+#!/bin/bash
+# macOS 10.15+ still ships bash 3.2, so this stays compatible with it.
+set -eo pipefail
+MACOS="$(cd "$(dirname "$0")" && pwd)"
+RES="$(cd "$MACOS/../Resources" && pwd)"
+
+args=()
+for a in "$@"; do
+  case "$a" in
+    -psn_*) ;;
+    *) args+=("$a") ;;
+  esac
+done
+
+arch="$(uname -m)"
+case "$arch" in
+  arm64) PY="$RES/python-arm64/bin/python3.12" ;;
+  x86_64) PY="$RES/python-x86_64/bin/python3.12" ;;
+  *)
+    /usr/bin/osascript -e 'display dialog "sRGB Normalize needs an Apple silicon or Intel Mac." buttons {"OK"} default button "OK" with title "sRGB Normalize"'
+    exit 1
+    ;;
+esac
+
+if [[ ! -x "$PY" ]]; then
+  /usr/bin/osascript -e 'display dialog "The Python runtime inside sRGB Normalize is missing." buttons {"OK"} default button "OK" with title "sRGB Normalize"'
+  exit 1
+fi
+
+export PYTHONNOUSERSITE=1
+export PYTHONDONTWRITEBYTECODE=1
+if [[ ${#args[@]} -gt 0 ]]; then
+  exec "$PY" "$RES/app/drop.py" "${args[@]}"
+fi
+exec "$PY" "$RES/app/drop.py"
