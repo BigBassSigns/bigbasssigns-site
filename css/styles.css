@@ -37,6 +37,9 @@ nav.menu .sub a:hover,nav.menu a:hover,nav.menu summary:hover{background:#222}
 .hero.inner{min-height:0;align-items:flex-end;padding:26px 0 20px}
 .hero.inner.hero-aframe{min-height:480px}
 .hero.inner.hero-aframe .hero-img{object-position:center 24%}
+.hero.inner.hero-business{min-height:280px;padding:16px 0 14px}
+.hero-business .hero-img{object-fit:cover;object-position:center}
+.hero-business h1{margin:6px 0 8px}
 .hero-landuse{background-image:none}
 .hero-landuse > img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 40%;z-index:0;pointer-events:none}
 .hero-construction{
@@ -102,6 +105,10 @@ img.shot{margin:0 0 22px}
 .shots.wide.aframe-gallery{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 .shots.wide.aframe-gallery figure{display:flex;flex-direction:column}
 .shots.wide.aframe-gallery figure img{width:100%;aspect-ratio:3/4;object-fit:contain}
+.shots.wide.business-gallery{margin:0 0 22px}
+main .business-gallery img{width:100%;height:220px;max-height:220px;object-fit:cover;object-position:center;margin:0}
+.business-gallery a{display:block;color:inherit;text-decoration:none}
+.business-gallery a:hover figcaption{color:var(--ink)}
 .printer-frame{max-width:960px;margin:0 auto 28px}
 .printer-frame img{width:100%;max-width:960px;margin-inline:auto;display:block;height:min(520px,62vw);object-fit:cover;object-position:center 42%;background:#f3f3f3}
 .printer-frame figcaption{font-size:14px;color:var(--muted);padding:10px 0 0;text-align:center;line-height:1.4}
@@ -135,6 +142,7 @@ footer li{margin:6px 0}
   .hero{min-height:0;padding:28px 0 22px}
   .hero.inner{min-height:0;padding:22px 0 18px}
   .hero.inner.hero-aframe{min-height:260px}
+  .hero.inner.hero-business{min-height:200px;padding:12px 0 10px}
   .hero-construction{min-height:220px}
   .brand img{height:46px}
   main .card img{height:200px}
