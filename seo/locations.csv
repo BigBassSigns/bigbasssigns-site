@@ -8,9 +8,9 @@ Everett,Snohomish,city,114900,10.7,built,/service-area/Everett
 Gold Bar,Snohomish,city,2420,28.3,unbuilt,/service-area/Gold-Bar
 Granite Falls,Snohomish,city,4765,23.7,unbuilt,/service-area/Granite-Falls
 Index,Snohomish,town,170,34.6,unbuilt,/service-area/Index
-Lake Stevens,Snohomish,city,42590,15.3,unbuilt,/service-area/Lake-Stevens
+Lake Stevens,Snohomish,city,42590,15.3,built,/service-area/Lake-Stevens
 Lynnwood,Snohomish,city,43070,0.0,built,/service-area/Lynnwood
-Marysville,Snohomish,city,76820,18.6,unbuilt,/service-area/Marysville
+Marysville,Snohomish,city,76820,18.6,built,/service-area/Marysville
 Mill Creek,Snohomish,city,21630,4.9,built,/service-area/Mill-Creek
 Monroe,Snohomish,city,20930,14.8,built,/service-area/monroe-site-development
 Mountlake Terrace,Snohomish,city,24750,2.4,built,/service-area/Mountlake-Terrace
@@ -22,16 +22,16 @@ Woodway,Snohomish,city,1340,4.9,built,/service-area/Woodway
 King County,King,county,2424700,14.7,built,/service-area/King-County
 Algona,King,city,3335,37.9,unbuilt,/service-area/Algona
 Auburn,King,city,90350,36.5,unbuilt,/service-area/Auburn
-Beaux Arts Village,King,town,310,17.4,unbuilt,/service-area/Beaux-Arts-Village
-Bellevue,King,city,158300,17.3,unbuilt,/service-area/Bellevue
+Beaux Arts Village,King,town,310,17.4,built,/service-area/Beaux-Arts-Village
+Bellevue,King,city,158300,17.3,built,/service-area/Bellevue
 Black Diamond,King,city,7550,37.9,unbuilt,/service-area/Black-Diamond
 Bothell,King/Snohomish,city,52010,5.9,built,/service-area/Bothell-Construction-Signage
 Burien,King,city,53470,24.5,unbuilt,/service-area/Burien
-Carnation,King,city,2415,22.6,unbuilt,/service-area/Carnation
+Carnation,King,city,2415,22.6,built,/service-area/Carnation
 Clyde Hill,King,city,3100,14.3,unbuilt,/service-area/Clyde-Hill
 Covington,King,city,22200,33.3,unbuilt,/service-area/Covington
 Des Moines,King,city,33690,30.4,unbuilt,/service-area/Des-Moines
-Duvall,King,city,8910,16.6,unbuilt,/service-area/Duvall
+Duvall,King,city,8910,16.6,built,/service-area/Duvall
 Enumclaw,King,city,13440,45.7,unbuilt,/service-area/Enumclaw
 Federal Way,King,city,103000,35.8,unbuilt,/service-area/Federal-Way
 Hunts Point,King,town,455,13.3,unbuilt,/service-area/Hunts-Point
@@ -42,9 +42,9 @@ Kirkland,King,city,98860,10.2,built,/service-area/Kirkland
 Lake Forest Park,King,city,13700,4.9,built,/service-area/Lake-Forest-Park
 Maple Valley,King,city,29340,34.2,unbuilt,/service-area/Maple-Valley
 Medina,King,city,2915,14.2,unbuilt,/service-area/Medina
-Mercer Island,King,city,25870,18.6,unbuilt,/service-area/Mercer-Island
+Mercer Island,King,city,25870,18.6,built,/service-area/Mercer-Island
 Milton,King,city,8965,39.9,unbuilt,/service-area/Milton
-Newcastle,King,city,13940,21.5,unbuilt,/service-area/Newcastle
+Newcastle,King,city,13940,21.5,built,/service-area/Newcastle
 Normandy Park,King,city,6860,27.4,unbuilt,/service-area/Normandy-Park
 North Bend,King,city,8700,34.2,unbuilt,/service-area/North-Bend
 Pacific,King,city,7285,39.2,unbuilt,/service-area/Pacific
