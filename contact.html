@@ -64,6 +64,39 @@
 <p><a class="btn btn-gold" href="mailto:Sales@BigBassSigns.com">Sales@BigBassSigns.com</a>
 <a class="btn btn-ghost" href="tel:+14254050118">(425) 405-0118</a></p>
 </div></div>
+<section id="quote"><div class="wrap">
+<h2>Quote request</h2>
+<p class="prose">Same details as an email. This opens a message to <a href="mailto:Sales@BigBassSigns.com">Sales@BigBassSigns.com</a>.</p>
+<form class="quote" action="mailto:Sales@BigBassSigns.com" method="post" enctype="text/plain">
+<label>Name
+<input name="name" type="text" autocomplete="name"></label>
+<label>Phone
+<input name="phone" type="tel" autocomplete="tel"></label>
+<label>What it is
+<select name="what" required>
+<option value="" selected disabled>Choose one</option>
+<option>Board</option>
+<option>Banner</option>
+<option>Yard sign</option>
+<option>A-frame or sandwich board</option>
+<option>Window</option>
+<option>Door kit</option>
+<option>Boat letters</option>
+<option>Other</option>
+</select></label>
+<label>Size and quantity
+<input name="size" type="text" autocomplete="off"></label>
+<label>Due date
+<input name="due" type="text" autocomplete="off"></label>
+<label>City or county
+<input name="place" type="text" autocomplete="off"></label>
+<label>Details
+<textarea name="details" rows="5"></textarea></label>
+<button type="submit">Email this quote</button>
+<p class="muted">Opens an email to Sales@BigBassSigns.com. Nothing is saved on this page.</p>
+<p class="form-status" role="status" hidden></p>
+</form>
+</div></section>
 <section><div class="wrap grid cols">
 <div class="prose">
 <h2>What to send</h2>
